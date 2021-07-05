@@ -152,7 +152,7 @@ public class Board {
        }else if ( counterO > counterX){
            return String.valueOf(inFavorOfO);
        }else {
-           return String.valueOf(inFavorOfEmpty);
+           return "";
        }
     }
 
