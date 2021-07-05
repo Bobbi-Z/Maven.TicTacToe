@@ -71,8 +71,81 @@ public class Board {
     }
 
     public Boolean isTie() {
-
-        return null;
+        int counterX = 0;
+        int counterO = 0;
+        int counterEmpty = 0;
+        char inFavorOfX = 'X';
+        char inFavorOfO = 'O';
+        char inFavorOfEmpty = ' ';
+        if (matrix[0][0] == matrix [0][1] && matrix[0][1] == matrix[0][2]) { //row 1 win
+            if (matrix[0][0].charValue() == inFavorOfX){
+                counterX += 1;
+            } else if (matrix[0][0].charValue() == inFavorOfO){
+                counterO += 1;
+            } else { counterEmpty += 1;
+            }
+        }else if (matrix[1][0] == matrix [1][1] && matrix[1][1] == matrix[1][2]) { //row 2 win
+            if (matrix[1][0].charValue() == inFavorOfX) {
+                counterX += 1;
+            } else if (matrix[1][0].charValue() == inFavorOfO) {
+                counterO += 1;
+            } else {
+                counterEmpty += 1;
+            }
+        }else if (matrix[2][0] == matrix [2][1] && matrix[2][1] == matrix[2][2]) { //row 3 win
+            if (matrix[2][0].charValue() == inFavorOfX) {
+                counterX += 1;
+            } else if (matrix[2][0].charValue() == inFavorOfO) {
+                counterO += 1;
+            } else {
+                counterEmpty += 1;
+            }
+        }else if (matrix[0][0] == matrix [1][0] && matrix[1][0] == matrix[2][0]) { //column 1 win
+            if (matrix[0][0].charValue() == inFavorOfX) {
+                counterX += 1;
+            } else if (matrix[0][0].charValue() == inFavorOfO) {
+                counterO += 1;
+            } else {
+                counterEmpty += 1;
+            }
+        }else if (matrix[0][1] == matrix [1][1] && matrix[1][1] == matrix[2][1]) { //column 2 win
+            if (matrix[0][1].charValue() == inFavorOfX) {
+                counterX += 1;
+            } else if (matrix[0][1].charValue() == inFavorOfO) {
+                counterO += 1;
+            } else {
+                counterEmpty += 1;
+            }
+        }else if (matrix[0][2] == matrix [1][2] && matrix[1][2] == matrix[2][2]) { //column 3 win
+            if (matrix[0][2].charValue() == inFavorOfX) {
+                counterX += 1;
+            } else if (matrix[0][2].charValue() == inFavorOfO) {
+                counterO += 1;
+            } else {
+                counterEmpty += 1;
+            }
+        }else if (matrix[0][0] == matrix [1][1] && matrix[1][1] == matrix[2][2]) { //diagonal top to bottom win
+            if (matrix[0][0].charValue() == inFavorOfX) {
+                counterX += 1;
+            } else if (matrix[0][0].charValue() == inFavorOfO) {
+                counterO += 1;
+            } else {
+                counterEmpty += 1;
+            }
+        }else if (matrix[2][0] == matrix [1][1] && matrix[1][1] == matrix[0][2]) { //diagonal bottom to top win
+            if (matrix[2][0].charValue() == inFavorOfX) {
+                counterX += 1;
+            } else if (matrix[2][0].charValue() == inFavorOfO) {
+                counterO += 1;
+            } else {
+                counterEmpty += 1;
+            }
+        }else{
+        } if (counterX == 0 && counterO == 0){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public String getWinner() {
