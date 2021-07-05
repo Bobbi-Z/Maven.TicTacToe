@@ -8,15 +8,14 @@ public class Board {
 
     public Board(Character[][] matrix) {
         this.matrix = matrix;
-
     }
+
     public Boolean isInFavorOfX() {
         int counterX = 0;
         int counterO = 0;
         int counterEmpty = 0;
         char inFavorOfX = 'X';
         char inFavorOfO = 'O';
-
         // [row][column]
         for (int indexRow = 0; indexRow < matrix.length; indexRow++) {
             for (int indexColumn = 0; indexColumn < matrix[0].length; indexColumn++) {
@@ -28,7 +27,6 @@ public class Board {
                     counterEmpty += 1;
                 }
             }
-
         }
         if (counterX > counterO && counterEmpty > 0) {
             return true;
@@ -39,7 +37,6 @@ public class Board {
         }
     }
 
-
     public Boolean isInFavorOfO() {
         int counterX = 0;
         int counterO = 0;
@@ -47,7 +44,6 @@ public class Board {
         char inFavorOfX = 'X';
         char inFavorOfO = 'O';
         char inFavorOfEmpty = ' ';
-
         // [row][column]
         for (int indexRow = 0; indexRow < matrix.length; indexRow++) {
             for (int indexColumn = 0; indexColumn < matrix[0].length; indexColumn++) {
@@ -59,7 +55,6 @@ public class Board {
                     counterEmpty += 1;
                 }
             }
-
         }
         if (counterO > counterX && counterEmpty > 0) {
             return true;
@@ -228,5 +223,4 @@ public class Board {
            return "";
        }
     }
-
 }
